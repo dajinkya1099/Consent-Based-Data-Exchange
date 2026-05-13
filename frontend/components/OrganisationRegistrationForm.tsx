@@ -17,6 +17,7 @@ import { FormNavigation } from "./FormNavigation";
 import { Stepper } from "./Stepper";
 
 interface OrganisationFormValues {
+  role: "Consumer" | "Provider";
   organisationName: string;
   contactPersonName: string;
   contactPersonEmail: string;
@@ -76,6 +77,7 @@ export default function OrganisationRegistrationForm() {
     resolver: zodResolver(currentSchema),
     mode: "onTouched",
     defaultValues: {
+      role: "Consumer",
       organisationName: "",
       contactPersonName: "",
       contactPersonEmail: "",
@@ -129,8 +131,7 @@ export default function OrganisationRegistrationForm() {
 
     const profile = {
       registrationType: "organisation",
-      organisationName: values.organisationName,
-      contactPersonName: values.contactPersonName,
+      role: values.role,
       contactPersonEmail: values.contactPersonEmail,
       contactPersonMobile: values.contactPersonMobile,
       emailVerified: values.emailVerified,
@@ -214,6 +215,16 @@ export default function OrganisationRegistrationForm() {
         <form onSubmit={onSubmit} className="space-y-6">
           {step === 0 && (
             <div className="grid gap-6 sm:grid-cols-2">
+              <div className="space-y-2 sm:col-span-2">
+                <label className="block text-sm font-medium text-slate-700">Registration role</label>
+                <select
+                  {...register("role")}
+                  className="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-sky-500 focus:ring-2 focus:ring-sky-100"
+                >
+                  <option value="Consumer">Consumer</option>
+                  <option value="Provider">Provider</option>
+                </select>
+              </div>
               <div className="space-y-2 sm:col-span-2">
                 <label className="block text-sm font-medium text-slate-700">Organisation Name</label>
                 <input type="text" {...register("organisationName")} className="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-sky-500 focus:ring-2 focus:ring-sky-100" />

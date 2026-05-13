@@ -11,6 +11,7 @@ import { FormNavigation } from "./FormNavigation";
 import { Stepper } from "./Stepper";
 
 interface IndividualFormValues {
+  role: "Consumer" | "Provider";
   email: string;
   aadhaarNumber: string;
   firstName: string;
@@ -51,6 +52,7 @@ export default function IndividualRegistrationForm() {
     resolver: zodResolver(currentSchema),
     mode: "onTouched",
     defaultValues: {
+      role: "Consumer",
       email: "",
       aadhaarNumber: "",
       firstName: "",
@@ -89,8 +91,7 @@ export default function IndividualRegistrationForm() {
 
     const profile = {
       registrationType: "individual",
-      email: values.email,
-      aadhaarNumber: values.aadhaarNumber,
+      role: values.role,
       firstName: values.firstName,
       lastName: values.lastName,
       mobile: values.mobile,
@@ -171,6 +172,16 @@ export default function IndividualRegistrationForm() {
                   className="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-sky-500 focus:ring-2 focus:ring-sky-100"
                 />
                 {errors.aadhaarNumber ? <p className="text-sm text-rose-600">{errors.aadhaarNumber.message}</p> : null}
+              </div>
+              <div className="space-y-2">
+                <label className="block text-sm font-medium text-slate-700">Registration role</label>
+                <select
+                  {...register("role")}
+                  className="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-sky-500 focus:ring-2 focus:ring-sky-100"
+                >
+                  <option value="Consumer">Consumer</option>
+                  <option value="Provider">Provider</option>
+                </select>
               </div>
               <div className="sm:col-span-2 space-y-2">
                 <button

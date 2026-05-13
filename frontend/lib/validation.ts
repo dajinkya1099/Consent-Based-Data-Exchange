@@ -1,6 +1,7 @@
 import { z } from "zod";
 
 export const individualStep1Schema = z.object({
+  role: z.enum(["Consumer", "Provider"]),
   email: z.string().email("Enter a valid email"),
   aadhaarNumber: z.string().min(12, "Aadhaar must be 12 digits").max(12, "Aadhaar must be 12 digits"),
 });
@@ -24,6 +25,7 @@ export const individualStep3Schema = z.object({
 });
 
 export const organisationStep1Schema = z.object({
+  role: z.enum(["Consumer", "Provider"]),
   organisationName: z.string().min(2, "Organisation name is required"),
   contactPersonName: z.string().min(2, "Contact person name is required"),
   contactPersonEmail: z.string().email("Enter a valid email"),
