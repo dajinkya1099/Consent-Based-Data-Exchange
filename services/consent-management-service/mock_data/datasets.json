@@ -1,0 +1,35 @@
+[
+  {
+    "id": "ds-001",
+    "name": "Open Demographics",
+    "access_type": "public",
+    "description": "A public demographics dataset suitable for analytics, R&D, and academic experimentation.",
+    "metadata": {
+      "records": 120000,
+      "owner": "Open Data Trust",
+      "tags": ["demographics", "open", "public"]
+    }
+  },
+  {
+    "id": "ds-002",
+    "name": "Protected Health Signals",
+    "access_type": "protected",
+    "description": "A protected health dataset with sensitive signals and metadata requiring consent for access.",
+    "metadata": {
+      "records": 54000,
+      "owner": "HealthGov",
+      "tags": ["health", "protected", "research"]
+    }
+  },
+  {
+    "id": "ds-003",
+    "name": "Protected Financial Insights",
+    "access_type": "protected",
+    "description": "A protected financial dataset for business intelligence and regulatory research.",
+    "metadata": {
+      "records": 24000,
+      "owner": "FinanceLabs",
+      "tags": ["finance", "protected", "analytics"]
+    }
+  }
+]

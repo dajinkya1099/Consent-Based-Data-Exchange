@@ -31,6 +31,7 @@ SERVICE_MAP = {
     "profile": "http://profile-service:8002",
     "verify": "http://verification-service:8003",
     "dashboard": "http://dashboard-service:8004",
+    "consent": "http://consent-service:8005",
 }
 
 EXCLUDED_HEADERS = {
@@ -73,6 +74,7 @@ async def proxy_request(service_name: str, path: str, request: Request) -> Respo
 
 
 @app.api_route("/api/{service}/{path:path}", methods=["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"])
+@app.api_route("/api/v1/{service}/{path:path}", methods=["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"])
 async def proxy(service: str, path: str, request: Request):
     if service not in SERVICE_MAP:
         raise HTTPException(status_code=404, detail="Target service not found.")

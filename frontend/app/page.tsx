@@ -1,3 +1,4 @@
+import Link from "next/link";
 import LoginForm from "../components/LoginForm";
 
 export default function HomePage() {
@@ -10,15 +11,8 @@ export default function HomePage() {
 <p className="bg-gradient-to-r from-sky-600 to-blue-800 bg-clip-text text-3xl font-extrabold tracking-tight text-transparent mb-6">
   Consent Based Data Exchange
 </p>              
-{/* <h1 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 drop-shadow-sm">
-  Login
-</h1> */}
               <p className="mt-4 text-slate-600"></p>
             </div>
-            {/* <div className="rounded-3xl bg-slate-100 p-5 text-sm text-slate-600">
-              <p className="font-semibold text-slate-900">Login Tips</p>
-              <p className="mt-3 leading-6">Use the mock credentials shown in the form or register a new account to explore the platform.</p>
-            </div> */}
           </div>
           <LoginForm />
         </section>
@@ -41,9 +35,25 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-          <div className="mt-8 rounded-3xl bg-slate-800/80 p-6 text-sm text-slate-300">
-            <p className="font-semibold text-white">New User?</p>
-            <p className="mt-2">If you don’t have credentials yet, start registration for individual or organisation access.</p>
+          <div className="mt-8 space-y-4 rounded-3xl bg-slate-800/80 p-6 text-sm text-slate-300">
+            <div>
+              <p className="font-semibold text-white">New User?</p>
+              <p className="mt-2">If you don’t have credentials yet, register as a consumer or provider to start managing datasets and requests.</p>
+            </div>
+            <div className="grid gap-3">
+              <Link
+                href="/registration/individual"
+                className="inline-flex w-full items-center justify-center rounded-3xl bg-sky-600 px-4 py-3 text-sm font-semibold text-white transition hover:bg-sky-500"
+              >
+                Register as Individual
+              </Link>
+              <Link
+                href="/registration/organisation"
+                className="inline-flex w-full items-center justify-center rounded-3xl border border-slate-700 bg-transparent px-4 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
+              >
+                Register as Organisation
+              </Link>
+            </div>
           </div>
         </aside>
       </div>
