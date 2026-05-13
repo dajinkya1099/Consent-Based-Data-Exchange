@@ -1,0 +1,18 @@
+{
+  "gsts": {
+    "27AAAAA0000A1Z5": true,
+    "07BBBBB1111B1Z2": true
+  },
+  "cins": {
+    "U12345MH2020PTC123456": true,
+    "L12345DL2019PLC123456": true
+  },
+  "msmes": {
+    "MSME1234567890": true,
+    "MSME0987654321": true
+  },
+  "pans": {
+    "ABCDE1234F": true,
+    "PQRST6789L": true
+  }
+}
