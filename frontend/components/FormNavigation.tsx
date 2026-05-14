@@ -24,7 +24,7 @@ export function FormNavigation({ step, maxStep, onBack, onNext, isNextDisabled, 
         type="button"
         onClick={onNext}
         disabled={isNextDisabled}
-        className="inline-flex items-center justify-center rounded-2xl bg-sky-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-sky-700 disabled:cursor-not-allowed disabled:opacity-50"
+        className="inline-flex items-center justify-center rounded-2xl border border-slate-400/30 px-5 py-3 text-sm font-semibold text-slate-800 transition hover:bg-slate-100 disabled:cursor-not-allowed disabled:opacity-50"
       >
         {submitLabel || (step === maxStep ? "Submit" : "Next")}
       </button>

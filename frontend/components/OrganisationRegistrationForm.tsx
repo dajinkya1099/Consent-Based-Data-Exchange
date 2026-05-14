@@ -249,7 +249,7 @@ export default function OrganisationRegistrationForm() {
                 <div className="space-y-2">
                   <label className="block text-sm font-medium text-slate-700">Email OTP</label>
                   <input type="text" {...register("emailOtp")} className="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 outline-none" />
-                  <button type="button" onClick={() => handleVerifyOtp("email")} className="rounded-2xl bg-slate-900 px-4 py-3 text-sm font-semibold text-white transition hover:bg-slate-700">
+                  <button type="button" onClick={() => handleVerifyOtp("email")} className="rounded-2xl bg-blue-900 border border-slate-400/30 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-200 hover:text-slate-900">
                     Verify Email OTP
                   </button>
                   <p className="text-sm text-slate-600">Email verified: {getValues("emailVerified") ? "Yes" : "No"}</p>
@@ -257,7 +257,7 @@ export default function OrganisationRegistrationForm() {
                 <div className="space-y-2">
                   <label className="block text-sm font-medium text-slate-700">Mobile OTP</label>
                   <input type="text" {...register("mobileOtp")} className="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 outline-none" />
-                  <button type="button" onClick={() => handleVerifyOtp("mobile")} className="rounded-2xl bg-slate-900 px-4 py-3 text-sm font-semibold text-white transition hover:bg-slate-700">
+                  <button type="button" onClick={() => handleVerifyOtp("mobile")} className="rounded-2xl bg-blue-900 border border-slate-400/30 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-200 hover:text-slate-900">
                     Verify Mobile OTP
                   </button>
                   <p className="text-sm text-slate-600">Mobile verified: {getValues("mobileVerified") ? "Yes" : "No"}</p>
@@ -282,7 +282,7 @@ export default function OrganisationRegistrationForm() {
                 {errors.registrationNumber ? <p className="text-sm text-rose-600">{errors.registrationNumber.message}</p> : null}
               </div>
               <div className="sm:col-span-2">
-                <button type="button" onClick={handleDocumentValidation} className="rounded-2xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-700">
+                <button type="button" onClick={handleDocumentValidation} className="rounded-2xl bg-blue-900 border border-slate-400/30 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-200 hover:text-slate-900">
                   Validate Document
                 </button>
                 <p className="mt-3 text-sm text-slate-600">Document validated: {getValues("documentValidated") ? "Yes" : "No"}</p>

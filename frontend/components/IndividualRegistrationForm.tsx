@@ -142,7 +142,7 @@ export default function IndividualRegistrationForm() {
     <div className="space-y-8">
       <Stepper steps={stepTitles} activeStep={step} />
       {statusMessage ? (
-        <div className="rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 text-sm text-slate-700">{statusMessage}</div>
+        <div className="rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 text-sm text-blue-700">{statusMessage}</div>
       ) : null}
 
       {submitted ? (
@@ -187,7 +187,7 @@ export default function IndividualRegistrationForm() {
                 <button
                   type="button"
                   onClick={handleVerifyAadhaar}
-                  className="inline-flex items-center justify-center rounded-2xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-700"
+                  className="inline-flex items-center justify-center rounded-2xl bg-blue-900 border border-slate-400/30 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-200 hover:text-slate-900"
                 >
                   Verify Aadhaar
                 </button>

@@ -60,6 +60,58 @@ export default function HomePage() {
       </div>
 
     </div>
+    <div className="grid grid-cols-2 gap-4">
+  
+  <div className="rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur-md transition duration-300 hover:bg-white/10">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+                  alt="Organisation Identity"
+                  className="h-16 w-16"
+                />
+
+                <p className="mt-4 text-sm font-semibold text-white">
+                  Identity Verification
+                </p>
+              </div>
+
+              <div className="rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur-md transition duration-300 hover:bg-white/10">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/2092/2092663.png"
+                  alt="Secure Exchange"
+                  className="h-16 w-16"
+                />
+
+                <p className="mt-4 text-sm font-semibold text-white">
+                  Secure Data Exchange
+                </p>
+              </div>
+
+              <div className="rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur-md transition duration-300 hover:bg-white/10">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/2885/2885417.png"
+                  alt="Data Protection"
+                  className="h-16 w-16"
+                />
+
+                <p className="mt-4 text-sm font-semibold text-white">
+                  Data Protection
+                </p>
+              </div>
+
+              <div className="rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur-md transition duration-300 hover:bg-white/10">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/2103/2103633.png"
+                  alt="Analytics"
+                  className="h-16 w-16"
+                />
+
+                <p className="mt-4 text-sm font-semibold text-white">
+                  AI Analytics
+                </p>
+              </div>
+  
+
+</div>
   </div>
           {/* <div className="mt-8 space-y-4 rounded-3xl bg-slate-800/80 p-6 text-sm text-slate-300">
             <div>
