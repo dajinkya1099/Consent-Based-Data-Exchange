@@ -26,7 +26,7 @@ export function Sidebar({ collapsed, onToggle }: SidebarProps) {
 
   return (
     <aside
-      className={`flex h-full flex-col justify-between rounded-[32px] border border-slate-200 bg-white p-5 shadow-sm transition-all duration-300 ${
+      className={`h-screen flex flex-col justify-between overflow-y-auto border border-slate-200 bg-white p-5 shadow-sm ${
         collapsed ? "w-20" : "w-72"
       }`}
     >

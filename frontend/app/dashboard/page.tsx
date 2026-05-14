@@ -2,8 +2,8 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { Sidebar } from "../../components/dashboard/Sidebar";
-import { TopNav } from "../../components/dashboard/TopNav";
+
+
 import { ProfilePanel } from "../../components/dashboard/ProfilePanel";
 import { DashboardCard } from "../../components/dashboard/DashboardCard";
 import { DashboardCharts } from "../../components/dashboard/DashboardCharts";
@@ -42,7 +42,6 @@ const stats = [
 
 export default function DashboardPage() {
   const [profile, setProfile] = useState<UserProfile | null>(null);
-  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
   const [verifyMessage, setVerifyMessage] = useState<string | null>(null);
 
@@ -95,11 +94,11 @@ export default function DashboardPage() {
 
   return (
     <main className="min-h-screen bg-slate-100">
-      <div className="grid min-h-screen gap-6 px-4 py-6 sm:px-6 lg:grid-cols-[320px_1fr] lg:px-8">
-        <Sidebar collapsed={sidebarCollapsed} onToggle={() => setSidebarCollapsed((value) => !value)} />
+      <div className="min-h-screen px-4 py-6 sm:px-6 lg:px-8">
+        
 
         <section className="space-y-6">
-          <TopNav onProfileClick={() => setProfileOpen(true)} />
+
 
           {verifyMessage ? (
             <div className="rounded-[32px] border border-sky-200 bg-sky-50 px-6 py-4 text-slate-900 shadow-sm transition duration-300">

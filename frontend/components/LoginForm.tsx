@@ -195,39 +195,24 @@ export default function LoginForm() {
 
   return (
     <div className="space-y-8">
-      {/* <div className="rounded-3xl border border-slate-200 bg-slate-950 p-1 text-slate-200 shadow-xl">
+  
+      <div className="rounded-3xl border border-slate-200 bg-blue-900 p-1 text-white shadow-xl">
         <div className="grid gap-1 sm:grid-cols-2">
           {(["individual", "organisation"] as UserType[]).map((option) => (
             <button
               key={option}
               type="button"
               onClick={() => setSelectedType(option)}
-              className={`rounded-3xl px-4 py-3 text-sm font-semibold transition ${selectedType === option ? "bg-white text-slate-950 shadow-sm" : "text-slate-300 hover:bg-slate-800"}`}
+              className={`rounded-3xl px-4 py-3 text-sm font-semibold transition ${selectedType === option
+                  ? "bg-white text-slate-950 shadow-sm"
+                  : "text-white"
+                }`}
             >
               {option === "individual" ? "Individual" : "Organisation"}
             </button>
           ))}
         </div>
-      </div> */}
-
-      <div className="rounded-3xl border border-slate-200 bg-slate-950 p-1 text-slate-200 shadow-xl">
-  <div className="grid gap-1 sm:grid-cols-2">
-    {(["individual", "organisation"] as UserType[]).map((option) => (
-      <button
-        key={option}
-        type="button"
-        onClick={() => setSelectedType(option)}
-        className={`rounded-3xl px-4 py-3 text-sm font-semibold transition ${
-          selectedType === option
-            ? "bg-white text-slate-950 shadow-sm"
-            : "text-slate-300 hover:bg-slate-800"
-        }`}
-      >
-        {option === "individual" ? "Individual" : "Organisation"}
-      </button>
-    ))}
-  </div>
-</div>
+      </div>
 
       <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -242,14 +227,14 @@ export default function LoginForm() {
               Use <span className="font-semibold">individualUser / Password123</span> or <span className="font-semibold">organisationUser / OrgPass123</span>.
             </p> */}
             {selectedType === "individual" ? (
-    <>
-      <User className="h-5 w-5 text-sky-600" />
-    </>
-  ) : (
-    <>
-      <Building2 className="h-5 w-5 text-sky-600" />
-    </>
-  )}
+              <>
+                <User className="h-5 w-5 text-sky-600" />
+              </>
+            ) : (
+              <>
+                <Building2 className="h-5 w-5 text-sky-600" />
+              </>
+            )}
           </div>
         </div>
 
@@ -260,7 +245,7 @@ export default function LoginForm() {
                 key={method}
                 type="button"
                 onClick={() => setSelectedMethod(method)}
-                className={`rounded-3xl px-4 py-3 text-sm font-semibold transition ${selectedMethod === method ? "bg-slate-950 text-white" : "text-slate-600 hover:bg-slate-200"}`}
+                className={`rounded-3xl px-4 py-3 text-sm font-semibold transition ${selectedMethod === method ? "bg-gradient-to-br bg-blue-900 text-white" : "text-slate-600 hover:bg-slate-200"}`}
               >
                 {method === "password" ? "Username & Password" : selectedType === "organisation" ? "Organisation Email OTP" : "Email / Mobile OTP"}
               </button>
@@ -313,7 +298,7 @@ export default function LoginForm() {
               <button
                 type="submit"
                 disabled={loading}
-                className="inline-flex w-full items-center justify-center rounded-3xl bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-70"
+                className="inline-flex w-full items-center justify-center rounded-3xl bg-blue-900 border border-slate-400/30 px-6 py-3 text-sm font-semibold text-white ring-1 ring-white/10 transition hover:bg-slate-200 hover:text-slate-900 disabled:cursor-not-allowed disabled:opacity-70"
               >
                 {loading ? "Signing in..." : "Sign in"}
               </button>
@@ -327,7 +312,7 @@ export default function LoginForm() {
                       key={option}
                       type="button"
                       onClick={() => setContactType(option)}
-                      className={`rounded-3xl border px-4 py-3 text-sm font-semibold transition ${contactType === option ? "border-slate-900 bg-slate-900 text-white" : "border-slate-300 bg-white text-slate-600 hover:border-slate-400"}`}
+                      className={`rounded-3xl border px-4 py-3 text-sm font-semibold transition ${contactType === option ? "border-slate-900 bg-blue-900 text-white" : "border-slate-300 bg-white text-slate-600 hover:border-slate-400"}`}
                     >
                       {option === "email" ? "Email" : "Mobile"}
                     </button>
@@ -383,7 +368,7 @@ export default function LoginForm() {
               <button
                 type="submit"
                 disabled={!otpSent || loading}
-                className="inline-flex w-full items-center justify-center rounded-3xl bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-70"
+                className="inline-flex w-full items-center justify-center rounded-3xl bg-blue-900 px-6 py-3 text-sm font-semibold border border-slate-400/30 hover:bg-slate-200 hover:text-slate-900 text-white disabled:cursor-not-allowed disabled:opacity-70"
               >
                 {loading ? "Verifying..." : "Verify OTP"}
               </button>
@@ -391,14 +376,14 @@ export default function LoginForm() {
           )}
         </form>
 
-        <div className="mt-8 rounded-3xl bg-slate-950 px-6 py-5 text-sm text-slate-300">
-          <p className="font-semibold text-white">New User?</p>
+        <div className="mt-8 rounded-3xl border border-slate-400/30 px-6 py-5 text-sm text-black-100">
+          <p className="font-semibold text-black-100">New User?</p>
           <p className="mt-2">Create a new profile and start onboarding with consent-aware registration.</p>
           <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <Link href="/registration/individual" className="inline-flex items-center justify-center rounded-3xl bg-sky-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-sky-700">
+            <Link href="/registration/individual" className="inline-flex items-center justify-center rounded-3xl bg-blue-900 border border-slate-400/30 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-200 hover:text-slate-900">
               Register as Individual
             </Link>
-            <Link href="/registration/organisation" className="inline-flex items-center justify-center rounded-3xl border border-slate-700 bg-transparent px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800">
+            <Link href="/registration/organisation" className="inline-flex items-center justify-center rounded-3xl bg-blue-900 border border-slate-400/30 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-200 hover:text-slate-900">
               Register as Organisation
             </Link>
           </div>

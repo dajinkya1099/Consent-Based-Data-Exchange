@@ -17,25 +17,51 @@ export default function HomePage() {
           <LoginForm />
         </section>
 
-        <aside className="flex flex-col justify-between rounded-[32px] bg-slate-950 p-8 text-white shadow-xl ring-1 ring-slate-800 sm:p-10">
-          <div className="space-y-7">
-            <div className="rounded-3xl bg-slate-900/80 p-6">
-              <p className="text-sm uppercase tracking-[0.3em] text-sky-400">Why login?</p>
-              <h2 className="mt-4 text-2xl font-semibold">Secure access for individuals and organisations</h2>
-              <p className="mt-3 text-slate-300">Choose a login method that suits your workflow and move quickly into the dashboard with a clean, responsive interface.</p>
-            </div>
-            <div className="grid gap-4">
-              <div className="rounded-3xl bg-slate-900/90 p-6">
-                <p className="text-sm uppercase tracking-[0.2em] text-sky-400">Individual users</p>
-                <p className="mt-3 text-slate-300">Login with username/password or OTP using email or mobile. Easy verification for individuals.</p>
-              </div>
-              <div className="rounded-3xl bg-slate-900/90 p-6">
-                <p className="text-sm uppercase tracking-[0.2em] text-sky-400">Organisation users</p>
-                <p className="mt-3 text-slate-300">Use organisation credentials or email OTP to access shared organisation dashboards.</p>
-              </div>
-            </div>
-          </div>
-          <div className="mt-8 space-y-4 rounded-3xl bg-slate-800/80 p-6 text-sm text-slate-300">
+        <aside className="flex flex-col justify-between rounded-[32px] bg-gradient-to-br from-slate-800 via-blue-800 to-slate-700 p-8 text-white shadow-2xl ring-1 ring-white/10 backdrop-blur-xl sm:p-10">
+  <div className="space-y-7">
+    
+    <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-md">
+      <p className="text-sm uppercase tracking-[0.3em] text-cyan-400">
+        Why login?
+      </p>
+
+      <h2 className="mt-4 text-xl font-bold leading-tight">
+        Secure access for individuals and organisations
+      </h2>
+
+      <p className="mt-3 text-slate-300 leading-relaxed">
+        Choose a login method that suits your workflow and move quickly into
+        the dashboard with a modern, responsive experience.
+      </p>
+    </div>
+
+    <div className="grid gap-4">
+      
+      <div className="rounded-3xl border border-white/10 bg-white/5 p-6 transition duration-300 hover:bg-white/10">
+        <p className="text-sm uppercase tracking-[0.2em] text-cyan-400">
+          Individual users
+        </p>
+
+        <p className="mt-3 leading-relaxed text-slate-300">
+          Login using username/password or OTP through email or mobile for
+          quick and secure access.
+        </p>
+      </div>
+
+      <div className="rounded-3xl border border-white/10 bg-white/5 p-6 transition duration-300 hover:bg-white/10">
+        <p className="text-sm uppercase tracking-[0.2em] text-cyan-400">
+          Organisation users
+        </p>
+
+        <p className="mt-3 leading-relaxed text-slate-300">
+          Access organisation dashboards securely using organisation
+          credentials or email OTP verification.
+        </p>
+      </div>
+
+    </div>
+  </div>
+          {/* <div className="mt-8 space-y-4 rounded-3xl bg-slate-800/80 p-6 text-sm text-slate-300">
             <div>
               <p className="font-semibold text-white">New User?</p>
               <p className="mt-2">If you don’t have credentials yet, register as a consumer or provider to start managing datasets and requests.</p>
@@ -54,7 +80,7 @@ export default function HomePage() {
                 Register as Organisation
               </Link>
             </div>
-          </div>
+          </div> */}
         </aside>
       </div>
     </main>
