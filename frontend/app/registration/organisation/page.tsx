@@ -51,12 +51,11 @@ export default function OrganisationRegistrationPage() {
               <div className="rounded-3xl border border-white/10 bg-white/5 p-6 transition duration-300 hover:bg-white/10">
 
                 <p className="text-sm uppercase tracking-[0.2em] text-cyan-400">
-                  Secure Team Access
+                  Secure Access
                 </p>
 
                 <p className="mt-3 leading-relaxed text-slate-300">
-                  Enable role-based access control and secure consent-driven
-                  collaboration across organisation teams.
+                  Manage secure organisational access and consent-based data sharing from a unified platform.
                 </p>
 
               </div>

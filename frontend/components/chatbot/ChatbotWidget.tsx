@@ -80,7 +80,7 @@ export default function ChatbotWidget() {
       {/* Floating Chat Button */}
       <button
         onClick={toggleChat}
-        className="fixed bottom-6 right-6 z-50 flex h-16 w-16 items-center justify-center rounded-full bg-blue-900 text-white shadow-2xl transition-all duration-300 hover:scale-105 hover:bg-sky-500"
+        className="fixed bottom-6 right-6 z-50 flex h-16 w-16 items-center justify-center rounded-full bg-blue-900 text-white shadow-2xl transition-all duration-300 hover:scale-105 hover:bg-blue-800"
       >
         {isOpen ? (
           <X size={28} />

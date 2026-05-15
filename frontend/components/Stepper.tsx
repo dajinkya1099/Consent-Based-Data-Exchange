@@ -29,7 +29,7 @@ export function Stepper({ steps, activeStep }: StepperProps) {
         })}
       </div>
       <div className="h-1 bg-slate-200 rounded-full overflow-hidden">
-        <div className="h-full bg-blue-900" style={{ width: `${((activeStep + 1) / steps.length) * 100}%` }} />
+        <div className="h-full bg-gradient-to-r from-sky-600 to-blue-800" style={{ width: `${((activeStep + 1) / steps.length) * 100}%` }} />
       </div>
     </div>
   );

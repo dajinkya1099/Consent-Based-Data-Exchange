@@ -198,6 +198,7 @@ export default function IndividualRegistrationForm() {
                 <input
                   type="text"
                   {...register("firstName")}
+                  readOnly={watch("firstName")?.length > 0}
                   className="w-full rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none"
                 />
               </div>
@@ -206,6 +207,7 @@ export default function IndividualRegistrationForm() {
                 <input
                   type="text"
                   {...register("lastName")}
+                  readOnly={watch("lastName")?.length > 0}
                   className="w-full rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none"
                 />
               </div>
@@ -214,6 +216,7 @@ export default function IndividualRegistrationForm() {
                 <input
                   type="text"
                   {...register("mobile")}
+                  readOnly={watch("mobile")?.length > 0}
                   className="w-full rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none"
                 />
               </div>
