@@ -4,16 +4,16 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const links = [
-  { label: "Dashboard", href: "/dashboard", icon: "D" },
-  { label: "Datasets", href: "/dashboard/datasets", icon: "DS" },
-  { label: "Models", href: "/dashboard/models", icon: "M" },
-  { label: "About Project", href: "/dashboard/about", icon: "A" },
-  { label: "Usecases", href: "/dashboard/usecases", icon: "U" },
-  { label: "Sandbox", href: "/dashboard/sandbox", icon: "S" },
-  { label: "Leaderboard", href: "/dashboard/leaderboard", icon: "L" },
-  { label: "Challenges", href: "/dashboard/challenges", icon: "C" },
-  { label: "Discussions", href: "/dashboard/discussions", icon: "D" },
-  { label: "Resources", href: "/dashboard/resources", icon: "R" },
+  { label: "Dashboard", href: "/dashboard"},
+  { label: "Datasets", href: "/dashboard/datasets"},
+  { label: "Models", href: "/dashboard/models"},
+  { label: "About Project", href: "/dashboard/about"},
+  { label: "Usecases", href: "/dashboard/usecases"},
+  { label: "Sandbox", href: "/dashboard/sandbox"},
+  { label: "Leaderboard", href: "/dashboard/leaderboard"},
+  { label: "Challenges", href: "/dashboard/challenges"},
+  { label: "Discussions", href: "/dashboard/discussions"},
+  { label: "Resources", href: "/dashboard/resources"},
 ];
 
 interface SidebarProps {
@@ -45,16 +45,14 @@ export function Sidebar({ collapsed, onToggle }: SidebarProps) {
 
         <nav className="space-y-2">
           {links.map((item) => {
-            const isActive = pathname === item.href || pathname.startsWith(`${item.href}/`);
+            const isActive = item.href === "/dashboard"? pathname === "/dashboard": pathname === item.href || pathname.startsWith(`${item.href}/`);
             return (
               <Link key={item.label} href={item.href} className={`flex w-full items-center gap-3 rounded-3xl px-4 py-3 text-sm font-medium transition ${
                 isActive
-                  ? "bg-sky-600 text-white shadow-lg"
+                  ? "rounded-3xl bg-blue-900 border border-slate-400/30 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-200 hover:text-slate-900"
                   : "text-slate-700 hover:bg-slate-100 hover:text-slate-900"
               }`}>
-                <span className={`flex h-10 w-10 items-center justify-center rounded-3xl ${isActive ? "bg-white text-sky-600" : "bg-slate-100 text-slate-500"}`}>
-                  {item.icon}
-                </span>
+               
                 {!collapsed ? item.label : null}
               </Link>
             );

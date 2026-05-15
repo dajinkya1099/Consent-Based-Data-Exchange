@@ -39,7 +39,7 @@ export default function DatasetsPage() {
   }, [datasets, authorFilter, institutionFilter, fileTypeFilter, statusFilter, sortBy]);
 
   return (
-    <main className="min-h-screen bg-slate-100 px-4 py-10 sm:px-6 lg:px-8">
+    <main className="flex flex-col gap-4 rounded-[32px] border border-slate-200 bg-transparent px-6 py-7 transition duration-300 sm:flex-row sm:items-center sm:justify-between">
       <div className="mx-auto max-w-6xl space-y-6">
         <div className="rounded-[32px] border border-slate-200 bg-white p-8 shadow-xl">
           <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
@@ -49,14 +49,14 @@ export default function DatasetsPage() {
               <p className="mt-3 text-slate-600">Filter by author, institution, file type, publication date and access status.</p>
             </div>
             <div className="grid gap-3 sm:grid-cols-2">
-              <div className="rounded-3xl bg-slate-950 px-4 py-3 text-sm text-white">{filteredDatasets.length} datasets found</div>
-              <Link href="/dashboard" className="inline-flex items-center justify-center rounded-3xl bg-sky-600 px-4 py-3 text-sm font-semibold text-white transition hover:bg-sky-500">
+              <div className="rounded-3xl bg-blue-900 border border-slate-400/30 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-200 hover:text-slate-900">{filteredDatasets.length} datasets found</div>
+              <Link href="/dashboard" className="rounded-3xl bg-blue-900 border border-slate-400/30 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-200 hover:text-slate-900">
                 Back to dashboard
               </Link>
             </div>
           </div>
 
-          <div className="mt-8 grid gap-4 rounded-3xl border border-slate-200 bg-slate-50 p-6">
+          <div className="mt-8 grid gap-4 rounded-3xl border bg-sky-100 text-sky-900 p-4">
             <div className="grid gap-4 lg:grid-cols-2 xl:grid-cols-4">
               <label className="space-y-2 text-sm">
                 <span className="font-medium text-slate-700">Author / Institution</span>
@@ -117,7 +117,7 @@ export default function DatasetsPage() {
           </div>
         </div>
 
-        <div className="grid gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {filteredDatasets.map((dataset) => (
             <article key={dataset.id} className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
               <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
@@ -151,7 +151,7 @@ export default function DatasetsPage() {
                 </div>
               </div>
               <div className="mt-6 flex flex-wrap items-center gap-3">
-                <Link href={`/dashboard/datasets/${dataset.id}`} className="inline-flex items-center justify-center rounded-3xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800">
+                <Link href={`/dashboard/datasets/${dataset.id}`} className="rounded-3xl bg-blue-900 border border-slate-400/30 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-200 hover:text-slate-900">
                   View dataset
                 </Link>
                 {dataset.accessType === "public" ? (
