@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Sidebar } from "../../components/dashboard/Sidebar";
 import { TopNav } from "../../components/dashboard/TopNav";
+import ChatbotWidget from "../../components/chatbot/ChatbotWidget";
 
 export default function DashboardLayout({
   children,
@@ -34,6 +35,9 @@ export default function DashboardLayout({
         <main className="flex-1 overflow-y-auto px-4 pb-6">
           {children}
         </main>
+
+         {/* Global Chatbot */}
+      <ChatbotWidget />
 
       </div>
     </div>

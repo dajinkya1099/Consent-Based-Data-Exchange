@@ -32,6 +32,7 @@ SERVICE_MAP = {
     "verify": "http://verification-service:8003",
     "dashboard": "http://dashboard-service:8004",
     "consent": "http://consent-service:8005",
+    "chatbot": "http://chatbot-service:8006",
 }
 
 EXCLUDED_HEADERS = {

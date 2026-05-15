@@ -28,6 +28,11 @@ services:
     ports:
       - "8005:8005"
 
+  chatbot-service:
+    build: ./chatbot-service
+    ports:
+      - "8006:8006"
+
   api-gateway:
     build: ./api-gateway
     ports:
@@ -38,3 +43,4 @@ services:
       - verification-service
       - dashboard-service
       - consent-service
+      - chatbot-service
