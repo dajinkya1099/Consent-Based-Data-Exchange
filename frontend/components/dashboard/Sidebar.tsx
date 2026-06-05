@@ -38,19 +38,19 @@ export function Sidebar({ collapsed, onToggle }: SidebarProps) {
 
   return (
     <aside
-      className={`h-screen flex flex-col justify-between overflow-y-auto border border-slate-200 bg-white p-5 shadow-sm ${
+      className={`h-screen flex flex-col justify-between overflow-y-auto border border-slate-200 bg-gradient-to-r from-sky-100 to-blue-300 p-5 shadow-sm ${
         collapsed ? "w-20" : "w-72"
       }`}
     >
       <div>
         <div className="mb-10 flex items-center gap-3">
-          <div className="flex h-12 w-12 items-center justify-center rounded-3xl bg-slate-900 text-xl font-semibold text-white shadow-sm">
+          {/* <div className="flex h-12 w-12 items-center justify-center rounded-3xl bg-slate-900 text-xl font-semibold text-white shadow-sm">
             C
-          </div>
+          </div> */}
           {!collapsed ? (
             <div>
-              <p className="text-sm font-semibold text-slate-900">ConsentX</p>
-              <p className="text-xs uppercase tracking-[0.25em] text-slate-500">Data Exchange</p>
+              <p className="bg-gradient-to-r from-sky-600 to-blue-800 bg-clip-text text-3xl font-extrabold text-transparent">ConsentX</p>
+              {/* <p className="text-xs uppercase tracking-[0.25em] text-slate-500">Data Exchange</p> */}
             </div>
           ) : null}
         </div>

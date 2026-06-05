@@ -76,7 +76,7 @@ export default function ResourceServerForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6 max-w-3xl mx-auto">
+    <form onSubmit={handleSubmit} className="space-y-6">
 
       {/* CONTEXT */}
       <div>

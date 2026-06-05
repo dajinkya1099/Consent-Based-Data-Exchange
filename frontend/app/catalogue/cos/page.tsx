@@ -4,7 +4,7 @@ import CreateCOSForm from "../../../components/catalogue/cos/CreateCOSForm";
 export default function CreateCOSPage() {
   return (
       <main className="min-h-screen bg-slate-100 px-4 py-10">
-        <div className="mx-auto max-w-3xl">
+        <div className="w-full mx-auto max-w-6xl">
   
           <div className="rounded-[32px] bg-white p-8 shadow-xl ring-1 ring-slate-200 sm:p-10">
   
