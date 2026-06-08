@@ -1,6 +1,6 @@
 import AppLayout from "../../components/layouts/AppLayout";
 
-export default function DashboardLayout({
+export default function CatalogueOwnerLayout({
   children,
 }: {
   children: React.ReactNode;
