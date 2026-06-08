@@ -47,7 +47,7 @@ export function Sidebar({ collapsed, onToggle }: SidebarProps) {
 
   return (
     <aside
-      className={`h-screen overflow-y-auto border border-slate-200 bg-gradient-to-r from-sky-100 to-blue-300 p-5 shadow-sm transition-all duration-300 ${
+      className={`h-screen overflow-y-auto border border-slate-200 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 p-5 shadow-sm transition-all duration-300 ${
         collapsed ? "w-20" : "w-72"
       }`}
     >
@@ -62,17 +62,17 @@ export function Sidebar({ collapsed, onToggle }: SidebarProps) {
               collapsed ? "justify-center" : "gap-3"
             }`}
           >
-            <div className="flex h-12 w-12 items-center justify-center rounded-3xl bg-slate-900 text-xl font-semibold text-white shadow-sm">
+            {/* <div className="flex h-12 w-12 items-center justify-center rounded-3xl bg-slate-900 text-xl font-semibold text-white shadow-sm">
               C
-            </div>
+            </div> */}
 
             {!collapsed && (
               <div>
-                <p className="text-sm font-semibold text-slate-900">
+                <p className="bg-gradient-to-r from-sky-100 to-blue-500 bg-clip-text text-3xl py-2 font-extrabold text-transparent">
                   ConsentX
                 </p>
 
-                <p className="text-xs uppercase tracking-[0.25em] text-slate-500">
+                <p className="text-xs uppercase tracking-[0.25em] text-slate-400">
                   Data Exchange
                 </p>
               </div>
@@ -84,9 +84,11 @@ export function Sidebar({ collapsed, onToggle }: SidebarProps) {
 
             {/* MAIN LINKS */}
             {links.map((item) => {
+              // Make the base Dashboard link active only on exact match
+              // so it doesn't stay highlighted when visiting its child routes.
               const isActive =
                 pathname === item.href ||
-                pathname.startsWith(`${item.href}/`);
+                (item.href !== "/dashboard" && pathname.startsWith(`${item.href}/`));
 
               return (
                 <Link
@@ -96,8 +98,8 @@ export function Sidebar({ collapsed, onToggle }: SidebarProps) {
                     collapsed ? "justify-center" : "gap-3"
                   } ${
                     isActive
-                      ? "bg-blue-900 text-white"
-                      : "text-slate-700 hover:bg-slate-100 hover:text-slate-900"
+                      ? "bg-white text-slate-900"
+                      : "text-white hover:bg-slate-100 hover:text-slate-900"
                   }`}
                 >
                   {!collapsed && item.label}
@@ -111,7 +113,7 @@ export function Sidebar({ collapsed, onToggle }: SidebarProps) {
                 <button
                   type="button"
                   onClick={() => setCatalogueOpen((prev) => !prev)}
-                  className="flex w-full items-center justify-between rounded-3xl bg-slate-50 px-4 py-3 text-left text-sm font-medium transition hover:bg-slate-100"
+                  className="flex w-full items-center justify-between rounded-3xl text-white px-4 py-3 text-left text-sm font-medium transition hover:bg-white hover:text-slate-900"
                 >
                   <span>Catalogue</span>
 
@@ -137,8 +139,8 @@ export function Sidebar({ collapsed, onToggle }: SidebarProps) {
                           href={item.href}
                           className={`flex rounded-3xl px-4 py-3 text-sm font-medium transition ${
                             isActive
-                              ? "bg-blue-900 text-white"
-                              : "text-slate-700 hover:bg-slate-100 hover:text-slate-900"
+                              ? "bg-white text-slate-900"
+                              : "text-white hover:bg-slate-100 hover:text-slate-900"
                           }`}
                         >
                           {item.label}
@@ -157,7 +159,7 @@ export function Sidebar({ collapsed, onToggle }: SidebarProps) {
                 <button
                   type="button"
                   onClick={() => setRequestAccessOpen((prev) => !prev)}
-                  className="flex w-full items-center justify-between rounded-3xl bg-slate-50 px-4 py-3 text-left text-sm font-medium transition hover:bg-slate-100"
+                  className="flex w-full items-center justify-between rounded-3xl text-white px-4 py-3 text-left text-sm font-medium transition hover:bg-white hover:text-slate-900"
                 >
                   <span>Requests Access</span>
 
@@ -183,8 +185,8 @@ export function Sidebar({ collapsed, onToggle }: SidebarProps) {
                           href={item.href}
                           className={`flex rounded-3xl px-4 py-3 text-sm font-medium transition ${
                             isActive
-                              ? "bg-blue-900 text-white"
-                              : "text-slate-700 hover:bg-slate-100 hover:text-slate-900"
+                              ? "bg-white text-slate-900"
+                              : "text-white hover:bg-slate-100 hover:text-slate-900"
                           }`}
                         >
                           {item.label}
@@ -199,13 +201,13 @@ export function Sidebar({ collapsed, onToggle }: SidebarProps) {
         </div>
 
         {/* COLLAPSE BUTTON */}
-        <button
+        {/* <button
           type="button"
           onClick={onToggle}
           className="mt-6 inline-flex w-full items-center justify-center rounded-3xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-700 transition duration-200 hover:border-slate-300 hover:bg-slate-100"
         >
           {collapsed ? "→" : "Collapse Sidebar"}
-        </button>
+        </button> */}
       </div>
     </aside>
   );
