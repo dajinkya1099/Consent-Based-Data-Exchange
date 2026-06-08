@@ -1,11 +1,6 @@
-import { SidebarItem, FormValues } from "./types";
+import {FormValues } from "./types";
 
-export const SIDEBAR_ITEMS: SidebarItem[] = [
-  { id: "access-request", label: "Access Request", icon: "📝" },
-  { id: "pending-request", label: "Pending Request", icon: "⏳" },
-  { id: "rejected-request", label: "Rejected Request", icon: "❌" },
-  { id: "approved-request", label: "Approved Request", icon: "✅" },
-];
+
 
 export const DEFAULT_FORM_VALUES: FormValues = {
   name: "",

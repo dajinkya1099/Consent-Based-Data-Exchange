@@ -1,9 +1,3 @@
-export interface SidebarItem {
-  id: string;
-  label: string;
-  icon: string;
-}
-
 export interface FormValues {
   name: string;
   email: string;
