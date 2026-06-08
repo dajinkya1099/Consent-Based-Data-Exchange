@@ -61,7 +61,7 @@ export default function DatasetPage() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-slate-50 px-4 py-8 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-slate-50 px-4 py-8 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
         <header className="mb-8">
           <h1 className="text-3xl font-bold text-slate-950">{DATASET_PAGE_TITLE}</h1>
@@ -73,6 +73,6 @@ export default function DatasetPage() {
         {!isLoading && !error && datasets.length === 0 ? <EmptyState /> : null}
         {!isLoading && !error && datasets.length > 0 ? <DatasetList datasets={datasets} /> : null}
       </div>
-    </main>
+    </div>
   );
 }
